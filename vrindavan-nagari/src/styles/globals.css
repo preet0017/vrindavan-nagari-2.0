@@ -8,7 +8,7 @@
 
 :root {
   /* Temporary colorful background for testing */
-  /* --background: radial-gradient(circle,rgba(211, 217, 100, 1) 12%, rgba(186, 76, 186, 1) 49%, rgba(76, 124, 186, 1) 88%); */
+    /* --background: linear-gradient(0deg,rgba(212, 80, 53, 1) 5%, rgba(76, 105, 186, 1) 24%, rgba(28, 12, 12, 1) 59%); */
 
   /* Uncomment this when we switch back to production */
   --background: #050608;
