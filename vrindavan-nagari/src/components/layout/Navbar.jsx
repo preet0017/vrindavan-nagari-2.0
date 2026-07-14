@@ -1,82 +1,136 @@
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Container from "../common/Container";
+import logo from "../../assets/images/logo/logo.png";
 
 const leftNav = [
   { title: "About", path: "/about" },
-  { title: "Experience", path: "/" },
+  { title: "Location", path: "/" },
 ];
 
 const rightNav = [
   { title: "Gallery", path: "/gallery" },
-  { title: "Passes", path: "/passes" },
+  { title: "Privacy Policy", path: "/privacy-policy" },
 ];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
+          ? "bg-black/30 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+        }`}
+    >
       <Container>
-        <div className="relative pt-8 md:pt-10 lg:pt-12">
+        {/* ───────── Desktop Navbar ───────── */}
+        <div
+          className="
+            hidden
+            md:grid
+            w-full
+            pt-10
+            pb-4
+            lg:pt-12
+            items-center
+          "
+          style={{ gridTemplateColumns: "1fr 1fr auto 1fr 1fr" }}
+        >
+          {/* About */}
+          <div className="flex justify-center pr-8 lg:pr-12">
+            <NavLink to={leftNav[0].path} className="nav-link">
+              {leftNav[0].title}
+            </NavLink>
+          </div>
+
+          {/* Experience */}
+          <div className="flex justify-center pr-8 lg:pr-12">
+            <NavLink to={leftNav[1].path} className="nav-link">
+              {leftNav[1].title}
+            </NavLink>
+          </div>
 
           {/* Logo */}
-
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 z-20">
-            <img
-              src="/src/assets/images/logo/logo.png"
-              alt="Vrindavan Nagari"
-              className="
-                w-36
-                md:w-44
-                lg:w-52
+          <div className="flex justify-center px-6 lg:px-10">
+            <a href="#">
+              <img
+                src={logo}
+                alt="Vrindavan Nagari"
+                className="
+                w-[120px]
+                md:w-[160px]
+                lg:w-[200px]
                 object-contain
                 select-none
                 pointer-events-none
+                transition-all
+                duration-500
               "
-            />
+              />
+            </a>
           </div>
 
-          {/* Navigation */}
-
-          <div className="grid grid-cols-[1fr_auto_1fr] items-start">
-
-            {/* LEFT */}
-
-            <div className="hidden md:flex justify-end gap-10 lg:gap-16 pt-10">
-
-              {leftNav.map((item) => (
-                <NavLink
-                  key={item.title}
-                  to={item.path}
-                  className="nav-link"
-                >
-                  {item.title}
-                </NavLink>
-              ))}
-
-            </div>
-
-            {/* Spacer */}
-
-            <div className="w-40 md:w-52 lg:w-60" />
-
-            {/* RIGHT */}
-
-            <div className="hidden md:flex justify-start gap-10 lg:gap-16 pt-10">
-
-              {rightNav.map((item) => (
-                <NavLink
-                  key={item.title}
-                  to={item.path}
-                  className="nav-link"
-                >
-                  {item.title}
-                </NavLink>
-              ))}
-
-            </div>
-
+          {/* Gallery */}
+          <div className="flex justify-center pl-8 lg:pl-12">
+            <NavLink to={rightNav[0].path} className="nav-link">
+              {rightNav[0].title}
+            </NavLink>
           </div>
 
+          {/* Passes */}
+          <div className="flex justify-center pl-8 lg:pl-12">
+            <NavLink to={rightNav[1].path} className="nav-link">
+              {rightNav[1].title}
+            </NavLink>
+          </div>
         </div>
+
+        {/* ───────── Mobile Navbar ───────── */}
+        <div className="flex md:hidden items-center justify-between py-6">
+          <img
+            src={logo}
+            alt="Vrindavan Nagari"
+            className="w-[120px] object-contain select-none pointer-events-none"
+          />
+
+          <button
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="text-white text-3xl leading-none"
+            aria-label={menuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
+
+        {/* ───────── Mobile Drawer ───────── */}
+        {menuOpen && (
+          <nav className="flex md:hidden flex-col items-center gap-8 py-8">
+            {[...leftNav, ...rightNav].map((item) => (
+              <NavLink
+                key={item.title}
+                to={item.path}
+                className="nav-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.title}
+              </NavLink>
+            ))}
+          </nav>
+        )}
       </Container>
     </header>
   );
