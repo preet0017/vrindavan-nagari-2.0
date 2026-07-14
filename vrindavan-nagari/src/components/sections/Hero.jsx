@@ -1,5 +1,5 @@
 
-import video from "../../assets/video/hero_section_vid.mp4";
+import video from "../../../public/videos/hero_vidd.mp4";
 
 export default function Hero() {
   const handleScroll = () => {
@@ -34,14 +34,13 @@ export default function Hero() {
       <div className="relative mx-4 sm:mx-10 md:mx-20 z-10 flex h-full items-center justify-center px-2 sm:px-4 pb-30 pt-20 text-center ">
         <div className="max-w-4xl mx-auto ">
           <span className="inline-block py-1.5 px-3 sm:py-2 sm:px-4 rounded-full bg-white/10 text-white text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.35em] mb-4 sm:mb-8 border border-white/20 shadow-lg shadow-black/20">
-            Premium Natural Nutrition
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.55)] leading-tight mb-4 sm:mb-6">
-            Elevate your wellness with premium protein.
+            {/* Elevate your wellness with premium protein. */}
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto mb-6 sm:mb-10 leading-relaxed drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)]">
-            Discover handcrafted nutrition built for modern performance and
-            effortless daily rituals.
+            {/* Discover handcrafted nutrition built for modern performance and
+            effortless daily rituals. */}
           </p>
           <button
             type="button"

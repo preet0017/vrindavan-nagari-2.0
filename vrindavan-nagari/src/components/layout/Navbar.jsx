@@ -17,7 +17,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-4 left-0 w-full z-50">
+    <header className="absolute top-2 left-0 w-full z-50">
       <Container className="">
         {/* ── Single-row 5-column grid ── */}
         <div
