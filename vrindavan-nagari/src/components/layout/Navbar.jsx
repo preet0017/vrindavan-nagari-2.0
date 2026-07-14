@@ -17,8 +17,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50">
-      <Container>
+    <header className="absolute top-4 left-0 w-full z-50">
+      <Container className="">
         {/* ── Single-row 5-column grid ── */}
         <div
           className="
@@ -30,14 +30,14 @@ export default function Navbar() {
           style={{ gridTemplateColumns: "1fr 1fr auto 1fr 1fr" }}
         >
           {/* Col 1 – About */}
-          <div className="flex justify-end pr-8 lg:pr-12">
+          <div className="flex justify-center pr-8 lg:pr-12">
             <NavLink to={leftNav[0].path} className="nav-link">
               {leftNav[0].title}
             </NavLink>
           </div>
 
           {/* Col 2 – Experience */}
-          <div className="flex justify-end pr-8 lg:pr-12">
+          <div className="flex justify-center pr-8 lg:pr-12">
             <NavLink to={leftNav[1].path} className="nav-link">
               {leftNav[1].title}
             </NavLink>
@@ -60,14 +60,14 @@ export default function Navbar() {
           </div>
 
           {/* Col 4 – Gallery */}
-          <div className="flex justify-start pl-8 lg:pl-12">
+          <div className="flex justify-center pl-8 lg:pl-12">
             <NavLink to={rightNav[0].path} className="nav-link">
               {rightNav[0].title}
             </NavLink>
           </div>
 
           {/* Col 5 – Passes */}
-          <div className="flex justify-start pl-8 lg:pl-12">
+          <div className="flex justify-center pl-8 lg:pl-12">
             <NavLink to={rightNav[1].path} className="nav-link">
               {rightNav[1].title}
             </NavLink>

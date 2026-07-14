@@ -7,7 +7,12 @@
 ========================================================== */
 
 :root {
-  --background: #050608;
+  /* Temporary colorful background for testing */
+  --background: radial-gradient(circle,rgba(211, 217, 100, 1) 12%, rgba(186, 76, 186, 1) 49%, rgba(76, 124, 186, 1) 88%);
+
+  /* Uncomment this when we switch back to production */
+  /* --background: #050608; */
+
   --gold: #d4af37;
   --cream: #fff5dc;
   --white: #f8f8f8;
@@ -71,10 +76,14 @@ button {
   position: relative;
 
   font-family: "Cinzel", serif;
-  font-size: 0.82rem;
+
+  /* Increased size */
+  font-size: 1.05rem;
+
   font-weight: 600;
 
-  letter-spacing: 0.32em;
+  letter-spacing: 0.24em;
+
   text-transform: uppercase;
 
   color: var(--white);
@@ -115,14 +124,14 @@ button {
 
 @media (max-width: 1024px) {
   .nav-link {
-    font-size: 0.75rem;
-    letter-spacing: 0.24em;
+    font-size: 0.95rem;
+    letter-spacing: 0.20em;
   }
 }
 
 @media (max-width: 768px) {
   .nav-link {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
   }
 }
