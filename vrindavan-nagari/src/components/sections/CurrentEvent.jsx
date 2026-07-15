@@ -4,9 +4,11 @@ import Container from '../common/Container'
 const CurrentEvent = () => {
   return (
     <>
-    <Container className="h-screen">
+    <Container className="h-screen bg-blue-300">
         <div>
-            <h1 className="text-4xl font-bold mb-4 text-center relative top-10 text-amber-300">Upcoming Events</h1>
+            <h1 className="text-4xl font-bold mb-4 text-center relative top-10 text-amber-300">
+                Upcoming Events
+            </h1>
         </div>
         <div>
             <h2 className="text-xl font-semibold mb-4 text-center relative top-14 text-white">

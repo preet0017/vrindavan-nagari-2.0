@@ -25,8 +25,8 @@
 ========================================================== */
 
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   box-sizing: border-box;
 }
 
@@ -39,7 +39,7 @@ body {
   color: var(--white);
   font-family: "Manrope", sans-serif;
   overflow-x: hidden;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 a {

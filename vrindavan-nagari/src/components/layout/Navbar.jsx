@@ -43,9 +43,6 @@ export default function Navbar() {
             hidden
             md:grid
             w-full
-            pt-10
-            pb-4
-            lg:pt-12
             items-center
           "
           style={{ gridTemplateColumns: "1fr 1fr auto 1fr 1fr" }}
